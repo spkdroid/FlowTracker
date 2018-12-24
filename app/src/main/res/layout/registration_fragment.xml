@@ -33,23 +33,34 @@
                 android:layout_height="wrap_content" android:id="@+id/lastdateperiod" android:textStyle="bold"
                 android:textColor="@color/colorAccent"/>
 
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
 
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/dateinputtext"/>
+            <EditText
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/dateinputtext"/>
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/calendaricon"
+                    android:id="@+id/dateperiodicon"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+
         <TextView
                 android:text="Number of days"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/numberofdays"
                 android:textColor="@color/colorAccent"/>
-        <EditText
-                android:layout_width="match_parent"
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+    <EditText
+                android:layout_width="309dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/daysinputtext"/>
+    </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
