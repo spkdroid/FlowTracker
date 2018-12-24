@@ -1,4 +1,4 @@
-package ca.rovbot.flowtracker.ui.main
+package ca.rovbot.flowtracker.fragment
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,7 +6,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.R
+import ca.rovbot.flowtracker.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -27,6 +32,10 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+     //   splashicon.startAnimation(AnimationUtils.loadAnimation(context,R.anim.rotation_anim))
+         startbutton.setOnClickListener {
+             Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_registrationFragment)
+         }
     }
 
 }

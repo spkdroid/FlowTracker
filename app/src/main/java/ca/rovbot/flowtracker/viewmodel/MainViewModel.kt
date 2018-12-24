@@ -1,4 +1,4 @@
-package ca.rovbot.flowtracker.ui.main
+package ca.rovbot.flowtracker.viewmodel
 
 import android.arch.lifecycle.ViewModel
 

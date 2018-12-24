@@ -4,6 +4,11 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_main"
             app:startDestination="@id/mainFragment">
 
-    <fragment android:id="@+id/mainFragment" android:name="ca.rovbot.flowtracker.ui.main.MainFragment"
-              android:label="main_fragment" tools:layout="@layout/main_fragment"/>
+    <fragment android:id="@+id/mainFragment" android:name="ca.rovbot.flowtracker.fragment.MainFragment"
+              android:label="main_fragment" tools:layout="@layout/main_fragment">
+        <action android:id="@+id/action_mainFragment_to_registrationFragment"
+                app:destination="@id/registrationFragment"/>
+    </fragment>
+    <fragment android:id="@+id/registrationFragment" android:name="ca.rovbot.flowtracker.fragment.RegistrationFragment"
+              android:label="RegistrationFragment"/>
 </navigation>

@@ -3,7 +3,6 @@ package ca.rovbot.flowtracker
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
-import ca.rovbot.flowtracker.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

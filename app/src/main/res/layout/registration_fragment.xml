@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+            android:layout_width="108dp"
+            android:layout_height="130dp" app:srcCompat="@drawable/dayandnight"
+            android:id="@+id/imageView"
+            android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+            android:text="Submit"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitregistration"
+            android:textColor="@android:color/holo_red_dark" android:background="@android:color/transparent"
+            android:layout_marginBottom="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="368dp"
+            android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/linearLayout" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="154dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/submitregistration">
+        <TextView
+                android:text="Last Date Period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/lastdateperiod" android:textStyle="bold"
+                android:textColor="@color/colorAccent"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/dateinputtext"/>
+        <TextView
+                android:text="Number of days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/numberofdays"
+                android:textColor="@color/colorAccent"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/daysinputtext"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
