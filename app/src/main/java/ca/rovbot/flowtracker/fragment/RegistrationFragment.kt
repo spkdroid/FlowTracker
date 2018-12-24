@@ -1,5 +1,6 @@
 package ca.rovbot.flowtracker.fragment
 
+import android.app.DatePickerDialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,6 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import ca.rovbot.flowtracker.R
 import ca.rovbot.flowtracker.viewmodel.RegistrationViewModel
+import kotlinx.android.synthetic.main.registration_fragment.*
+import android.widget.DatePicker
+import java.util.*
+import android.widget.Toast
+import android.view.View.OnFocusChangeListener
+
+
 
 
 class RegistrationFragment : Fragment() {
@@ -29,6 +37,35 @@ class RegistrationFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(RegistrationViewModel::class.java)
         // TODO: Use the ViewModel
-    }
 
+        dateinputtext.onFocusChangeListener = OnFocusChangeListener { view, hasFocus ->
+          if(hasFocus) {
+              var c = Calendar.getInstance();
+              var mYear = c.get(Calendar.YEAR);
+              var mMonth = c.get(Calendar.MONTH);
+              var mDay = c.get(Calendar.DAY_OF_MONTH);
+
+              val datePickerDialog = DatePickerDialog(
+                  context,
+                  DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                      dateinputtext.setText(
+                          dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
+                      )
+                  },
+                  mYear,
+                  mMonth,
+                  mDay
+              )
+              datePickerDialog.show()
+          }
+        }
+
+
+
+
+
+
+
+
+    }
 }
