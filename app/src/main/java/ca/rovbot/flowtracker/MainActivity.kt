@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
         navHost = supportFragmentManager
             .findFragmentById(R.id.navHost) as NavHostFragment
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
