@@ -1,6 +1,5 @@
 package ca.rovbot.flowtracker.fragment
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,13 +7,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.R
 import ca.rovbot.flowtracker.viewmodel.RegistrationViewModel
 import kotlinx.android.synthetic.main.registration_fragment.*
-import android.widget.DatePicker
 import java.util.*
-import android.widget.Toast
-import android.view.View.OnFocusChangeListener
 
 
 
@@ -72,7 +70,21 @@ class RegistrationFragment : Fragment() {
         }
 
         submitregistration.setOnClickListener{
-            viewModel.registerUser(daysinputtext.text.toString(),dateinputtext.text.toString(), this!!.context!!)
+
+            val validFlag = Integer.parseInt(viewModel.checkSelectedDateValid(view!!.context,dateinputtext.text.toString()));
+            if(validFlag>-1) {
+                viewModel.registerUser(daysinputtext.text.toString(), dateinputtext.text.toString(), this!!.context!!)
+
+                if (viewModel.validateUser(view!!.context)) {
+                    Navigation.findNavController(it).navigate(R.id.action_registrationFragment_to_hubFragment)
+                } else {
+                    Toast.makeText(view!!.context, "Registartion Failed", Toast.LENGTH_LONG).show()
+                }
+
+            } else {
+                Toast.makeText(view!!.context,"Please Pick a valid date",Toast.LENGTH_LONG).show()
+            }
+
         }
 
     }

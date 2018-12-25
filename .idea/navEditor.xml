@@ -8,17 +8,34 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="hubFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-744" />
+                            <option name="y" value="522" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="mainFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-984" />
-                            <option name="y" value="340" />
+                            <option name="x" value="-1674" />
+                            <option name="y" value="221" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_mainFragment_to_hubFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_mainFragment_to_registrationFragment">
                               <value>
                                 <LayoutPositions />
@@ -34,9 +51,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-584" />
-                            <option name="y" value="133" />
+                            <option name="x" value="-1163" />
+                            <option name="y" value="20" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_registrationFragment_to_hubFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

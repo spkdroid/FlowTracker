@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HubFragment" tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+            android:src="@drawable/hub_calendar_icon"
+            android:layout_width="42dp"
+            android:layout_height="0dp"
+            android:id="@+id/hubCalendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="62dp"
+            app:layout_constraintTop_toBottomOf="@+id/circularProgressBar" android:layout_marginBottom="4dp"/>
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:layout_width="191dp"
+            android:layout_height="305dp"
+            app:cpb_background_progressbar_color="#FFCDD2"
+            app:cpb_background_progressbar_width="5dp"
+            app:cpb_progressbar_color="#F44336"
+            app:cpb_progressbar_width="25dp"
+            android:id="@+id/circularProgressBar"
+            android:layout_marginTop="103dp"
+            android:layout_marginBottom="161dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/hubCalendar" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+            android:text="11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dayscount"
+            android:textSize="108sp" android:textStyle="bold" android:textColor="@android:color/black"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/titledays"
+            android:layout_marginBottom="14dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/logperiod" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="Current Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titledays"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="@+id/dayscount"
+            android:layout_marginTop="95dp" android:layout_marginStart="36dp"
+            android:layout_marginBottom="12dp" app:layout_constraintBottom_toTopOf="@+id/dayscount"/>
+    <Button
+            android:text="Log Period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logperiod"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:textColor="@android:color/holo_red_dark" android:backgroundTint="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/dayscount"
+            app:layout_constraintBottom_toTopOf="@+id/message"/>
+    <TextView
+            android:text="Message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/message"
+            android:textStyle="bold" android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/logperiod"
+            app:layout_constraintEnd_toStartOf="@+id/logperiod" android:layout_marginEnd="26dp"
+            android:layout_marginBottom="101dp"
+            app:layout_constraintBottom_toTopOf="@+id/hubCalendar"/>
+</android.support.constraint.ConstraintLayout>

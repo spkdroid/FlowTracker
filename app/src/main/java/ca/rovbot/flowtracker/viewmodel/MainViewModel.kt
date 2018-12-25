@@ -10,11 +10,11 @@ class MainViewModel : ViewModel() {
 
         val editor = it!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
 
-        if(editor.getString("date", "date").toString().isNotEmpty() && editor.getString(
-                "freq",
-                "freq"
-            ).toString().isNotEmpty()
-        ) {
+        val date = editor.getString("date","date").toString()
+        val freq = editor.getString("freq","freq").toString()
+
+
+        if(date.equals("date") && freq.equals("freq")) {
             return true;
         }
         return false;

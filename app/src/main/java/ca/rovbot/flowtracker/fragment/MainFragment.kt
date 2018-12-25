@@ -34,10 +34,10 @@ class MainFragment : Fragment() {
          splashicon.startAnimation(AnimationUtils.loadAnimation(context,R.anim.rotation_anim))
          startbutton.setOnClickListener {
 
-             if(!viewModel.validateUser(this.context)) {
+             if(viewModel.validateUser(this.context)) {
                  Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_registrationFragment)
              } else {
-
+                 Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_hubFragment)
              }
          }
     }
