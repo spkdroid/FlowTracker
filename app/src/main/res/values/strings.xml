@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">flowtracker</string>
+    <string name="sharedpreferencename">ca.rovbot.flowtracker</string>
 </resources>

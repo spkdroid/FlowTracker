@@ -72,7 +72,7 @@ class RegistrationFragment : Fragment() {
         }
 
         submitregistration.setOnClickListener{
-            viewModel.registerUser(daysinputtext.text.toString(),dateinputtext.text.toString())
+            viewModel.registerUser(daysinputtext.text.toString(),dateinputtext.text.toString(), this!!.context!!)
         }
 
     }
