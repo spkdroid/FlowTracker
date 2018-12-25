@@ -37,6 +37,7 @@ class MainFragment : Fragment() {
              if(viewModel.validateUser(this.context)) {
                  Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_registrationFragment)
              } else {
+                 viewModel.checkIfCycleCompleted(context)
                  Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_hubFragment)
              }
          }

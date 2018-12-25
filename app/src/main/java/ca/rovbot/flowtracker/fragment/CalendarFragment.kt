@@ -31,8 +31,6 @@ class CalendarFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(CalendarViewModel::class.java)
         // TODO: Use the ViewModel
-     calendarView.setEvents(viewModel.fetchEvent(context))
-        //   calendarView.setEvents(viewModel.fetchEvent(context));
+        calendarView.setEvents(viewModel.fetchEvent(context))
     }
-
 }

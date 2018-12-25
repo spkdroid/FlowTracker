@@ -11,6 +11,7 @@ import java.util.*
 
 class HubViewModel : ViewModel() {
 
+
     fun getDayCount(context: Context?):String {
         val editor = context!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
         val formatter: DateFormat
@@ -24,16 +25,13 @@ class HubViewModel : ViewModel() {
         return v.toString();
     }
 
-
     fun daysBetween(d1: Date, d2: Date): Long {
-        return ((d2.time - d1.time) / (1000 * 60 * 60 * 24)) as Long
+        return ((d2.time - d1.time) / (1000 * 60 * 60 * 24))
     }
 
     fun getCurrentProgress(currentDayNumber:String,context: Context?):Float{
         val editor = context!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
         val maxDate = editor.getString("date", "date").toString()
-
-
         var percentage = (currentDayNumber.toFloat()/maxDate.toFloat())*100;
         return percentage
     }
