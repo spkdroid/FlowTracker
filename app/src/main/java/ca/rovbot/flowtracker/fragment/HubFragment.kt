@@ -34,6 +34,16 @@ class HubFragment : Fragment() {
         val progresBarResult = viewModel.getCurrentProgress(dayscount.text.toString(),context)
         circularProgressBar.setProgressWithAnimation(progresBarResult,6500);
 
+        if(progresBarResult<39){
+            messagecontent.setText(R.string.lesswarningmessage)
+        } else if(progresBarResult>39 && progresBarResult < 65) {
+            messagecontent.setText(R.string.highwarningmessage)
+        } else if(progresBarResult>39 && progresBarResult < 65) {
+            messagecontent.setText(R.string.ovulationmessage)
+        } else {
+            messagecontent.setText(R.string.lesswarningmessage)
+        }
+
     }
 
 }

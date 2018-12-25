@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Flow Tracker</string>
     <string name="sharedpreferencename">ca.rovbot.flowtracker</string>
+    <string name="lesswarningmessage">Less Chance of Pregnancy</string>
+    <string name="highwarningmessage">Higher Chance of Pregnancy</string>
+    <string name="ovulationmessage">Ovulation Period</string>
 </resources>

@@ -13,7 +13,6 @@ class MainViewModel : ViewModel() {
         val date = editor.getString("date","date").toString()
         val freq = editor.getString("freq","freq").toString()
 
-
         if(date.equals("date") && freq.equals("freq")) {
             return true;
         }
