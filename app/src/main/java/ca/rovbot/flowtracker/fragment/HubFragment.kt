@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.viewmodel.HubViewModel
 import ca.rovbot.flowtracker.R
 import kotlinx.android.synthetic.main.hub_fragment.*
@@ -43,6 +44,11 @@ class HubFragment : Fragment() {
         } else {
             messagecontent.setText(R.string.lesswarningmessage)
         }
+
+        hubCalendar.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_calendarFragment)
+        }
+
 
     }
 

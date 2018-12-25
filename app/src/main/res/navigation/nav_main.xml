@@ -15,5 +15,9 @@
         <action android:id="@+id/action_registrationFragment_to_hubFragment" app:destination="@id/hubFragment"/>
     </fragment>
     <fragment android:id="@+id/hubFragment" android:name="ca.rovbot.flowtracker.fragment.HubFragment"
-              android:label="HubFragment"/>
+              android:label="HubFragment">
+        <action android:id="@+id/action_hubFragment_to_calendarFragment" app:destination="@id/calendarFragment"/>
+    </fragment>
+    <fragment android:id="@+id/calendarFragment" android:name="ca.rovbot.flowtracker.fragment.CalendarFragment"
+              android:label="calendar_fragment" tools:layout="@layout/calendar_fragment"/>
 </navigation>
