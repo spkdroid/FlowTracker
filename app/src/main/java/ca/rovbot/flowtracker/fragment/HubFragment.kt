@@ -33,7 +33,7 @@ class HubFragment : Fragment() {
         // TODO: Use the ViewModel
         dayscount.text = viewModel.getDayCount(context)
         val progresBarResult = viewModel.getCurrentProgress(dayscount.text.toString(),context)
-        circularProgressBar.setProgressWithAnimation(progresBarResult,6500);
+        circularProgressBar.setProgressWithAnimation(progresBarResult,2000);
 
         if(progresBarResult<39){
             messagecontent.setText(R.string.lesswarningmessage)
