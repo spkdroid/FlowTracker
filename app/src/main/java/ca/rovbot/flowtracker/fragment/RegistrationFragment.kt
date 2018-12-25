@@ -1,5 +1,6 @@
 package ca.rovbot.flowtracker.fragment
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -38,34 +39,41 @@ class RegistrationFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(RegistrationViewModel::class.java)
         // TODO: Use the ViewModel
 
-        dateinputtext.onFocusChangeListener = OnFocusChangeListener { view, hasFocus ->
-          if(hasFocus) {
-              var c = Calendar.getInstance();
-              var mYear = c.get(Calendar.YEAR);
-              var mMonth = c.get(Calendar.MONTH);
-              var mDay = c.get(Calendar.DAY_OF_MONTH);
+        daysinputtext.setText("28")
 
-              val datePickerDialog = DatePickerDialog(
-                  context,
-                  DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                      dateinputtext.setText(
-                          dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
-                      )
-                  },
-                  mYear,
-                  mMonth,
-                  mDay
-              )
-              datePickerDialog.show()
-          }
+        dateperiodicon.setOnClickListener {
+            var c = Calendar.getInstance();
+            var mYear = c.get(Calendar.YEAR);
+            var mMonth = c.get(Calendar.MONTH);
+            var mDay = c.get(Calendar.DAY_OF_MONTH);
+
+            val datePickerDialog = DatePickerDialog(
+                context,
+                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    dateinputtext.setText(
+                        dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
+                    )
+                },
+                mYear,
+                mMonth,
+                mDay
+            )
+            datePickerDialog.show()
         }
 
+        addImage.setOnClickListener{
+            val result = (Integer.parseInt(daysinputtext.text.toString())+1).toString();
+            daysinputtext.setText(result)
+        }
 
+        minusImage.setOnClickListener{
+            val result = (Integer.parseInt(daysinputtext.text.toString())-1).toString();
+            daysinputtext.setText(result)
+        }
 
-
-
-
-
+        submitregistration.setOnClickListener{
+            viewModel.registerUser(daysinputtext.text.toString(),dateinputtext.text.toString())
+        }
 
     }
 }

@@ -40,7 +40,10 @@
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:ems="10"
-                    android:id="@+id/dateinputtext"/>
+                    android:id="@+id/dateinputtext"
+                    android:enabled="false"
+                    android:gravity="center"
+            />
             <ImageView
                     android:layout_width="36dp"
                     android:layout_height="match_parent"
@@ -50,17 +53,30 @@
         </LinearLayout>
 
         <TextView
-                android:text="Number of days"
+                android:text="Number of period days"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/numberofdays"
                 android:textColor="@color/colorAccent"/>
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-    <EditText
-                android:layout_width="309dp"
+        <EditText
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/daysinputtext"/>
+                android:id="@+id/daysinputtext"
+                android:gravity="center"
+                android:enabled="false"
+        />
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" app:srcCompat="@drawable/add" android:id="@+id/addImage"
+                android:layout_weight="1"
+
+        />
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/minus" android:id="@+id/minusImage"
+                android:layout_weight="1"/>
     </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
