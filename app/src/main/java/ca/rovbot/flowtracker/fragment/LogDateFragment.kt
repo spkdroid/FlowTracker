@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.viewmodel.LogDateViewModel
 import ca.rovbot.flowtracker.R
 import kotlinx.android.synthetic.main.log_date_fragment.*
@@ -66,9 +67,8 @@ class LogDateFragment : Fragment() {
 
         updateregistration.setOnClickListener{
             viewModel.updateNewPeriodDate(dateinputtext.text.toString(),daysinputtext.text.toString(), this!!.context!!);
+            Navigation.findNavController(it).popBackStack()
         }
-
-
 
     }
 }
