@@ -10,7 +10,7 @@
 
     <TextView
             android:text="Period's Tracker"
-            android:layout_width="0dp"
+            android:layout_width="400dp"
             android:layout_height="64dp"
             android:id="@+id/screentitle" android:fontFamily="@font/galada"
             android:textSize="36sp" android:textStyle="bold" android:textColor="@android:color/black"
