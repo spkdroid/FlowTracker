@@ -12,7 +12,6 @@ import ca.rovbot.flowtracker.R
 import kotlinx.android.synthetic.main.log_date_fragment.*
 import java.util.*
 
-
 class LogDateFragment : Fragment() {
 
     companion object {
@@ -64,5 +63,12 @@ class LogDateFragment : Fragment() {
             )
             datePickerDialog.show()
         }
+
+        updateregistration.setOnClickListener{
+            viewModel.updateNewPeriodDate(dateinputtext.text.toString(),daysinputtext.text.toString(), this!!.context!!);
+        }
+
+
+
     }
 }

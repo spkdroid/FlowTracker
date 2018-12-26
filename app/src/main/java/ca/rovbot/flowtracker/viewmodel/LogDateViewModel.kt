@@ -2,6 +2,7 @@ package ca.rovbot.flowtracker.viewmodel
 
 import android.arch.lifecycle.ViewModel;
 import android.content.Context
+import android.text.Editable
 import ca.rovbot.flowtracker.R
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -33,10 +34,15 @@ class LogDateViewModel : ViewModel() {
         return v.toString();
     }
 
-
     fun daysBetween(d1: Date, d2: Date): Long {
         return ((d2.time - d1.time) / (1000 * 60 * 60 * 24)) as Long
     }
 
+    fun updateNewPeriodDate(lastperioddate: String, freqperioddays: String, ctx: Context) {
+        val editor = ctx.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE).edit()
+        editor.putString("date", freqperioddays)
+        editor.putString("freq",lastperioddate)
+        editor.apply()
+    }
 
 }
