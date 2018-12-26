@@ -31,6 +31,8 @@ class HubFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HubViewModel::class.java)
         // TODO: Use the ViewModel
+
+
         dayscount.text = viewModel.getDayCount(context)
         val progresBarResult = viewModel.getCurrentProgress(dayscount.text.toString(),context)
 
@@ -44,6 +46,10 @@ class HubFragment : Fragment() {
             messagecontent.setText(R.string.ovulationmessage)
         } else {
             messagecontent.setText(R.string.lesswarningmessage)
+        }
+
+        logperiod.setOnClickListener{
+            Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_logDateFragment)
         }
 
         hubCalendar.setOnClickListener {

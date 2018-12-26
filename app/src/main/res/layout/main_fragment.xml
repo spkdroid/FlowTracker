@@ -21,8 +21,8 @@
     <ImageView
             android:src="@drawable/splashicon"
 
-            android:layout_width="321dp"
-            android:layout_height="0dp"
+            android:layout_width="233dp"
+            android:layout_height="203dp"
             android:id="@+id/splashicon"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="131dp" app:layout_constraintEnd_toEndOf="parent"

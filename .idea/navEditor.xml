@@ -36,7 +36,24 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_hubFragment_to_logDateFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="logDateFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1019" />
+                            <option name="y" value="95" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
