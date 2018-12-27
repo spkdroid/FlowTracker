@@ -56,6 +56,10 @@ class HubFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_calendarFragment)
         }
 
+        rovbotdroid.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_chatBotFragment)
+        }
+
 
     }
 
