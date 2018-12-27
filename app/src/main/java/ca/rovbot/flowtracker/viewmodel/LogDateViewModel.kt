@@ -45,4 +45,23 @@ class LogDateViewModel : ViewModel() {
         editor.apply()
     }
 
+    fun checkSelectedDateValid(context: Context?,selectedCalendarDate:String,selectedDayCount:String):String {
+        val editor = context!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
+        val formatter: DateFormat
+        var date: Date
+        formatter = SimpleDateFormat("dd-MM-yyyy")
+        date = formatter.parse(selectedCalendarDate)
+        var currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        var currentDay: Date
+        currentDay = formatter.parse(currentDate)
+        val v = daysBetween(date,currentDay)
+
+        if(v>Integer.parseInt(selectedDayCount) || v<0)
+            return "-1"
+
+        return v.toString()
+    }
+
+
+
 }

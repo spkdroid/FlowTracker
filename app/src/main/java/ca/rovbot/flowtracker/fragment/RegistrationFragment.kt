@@ -71,7 +71,7 @@ class RegistrationFragment : Fragment() {
 
         submitregistration.setOnClickListener{
 
-            var validFlag = 0
+            var validFlag: Int
 
             try {
               validFlag = Integer.parseInt(viewModel.checkSelectedDateValid(view!!.context, dateinputtext.text.toString(),daysinputtext.text.toString()))
@@ -83,7 +83,8 @@ class RegistrationFragment : Fragment() {
                 viewModel.registerUser(daysinputtext.text.toString(), dateinputtext.text.toString(), this.context!!)
 
                 if (viewModel.validateUser(view!!.context)) {
-                    Navigation.findNavController(it).navigate(R.id.action_registrationFragment_to_hubFragment)
+                    Navigation.findNavController(it).popBackStack()
+                    //  Navigation.findNavController(it).navigate(R.id.action_registrationFragment_to_hubFragment)
                 } else {
                     Toast.makeText(view!!.context, "Registartion Failed", Toast.LENGTH_LONG).show()
                 }

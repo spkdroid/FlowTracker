@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.viewmodel.LogDateViewModel
 import ca.rovbot.flowtracker.R
@@ -66,9 +67,19 @@ class LogDateFragment : Fragment() {
         }
 
         updateregistration.setOnClickListener{
-            viewModel.updateNewPeriodDate(dateinputtext.text.toString(),daysinputtext.text.toString(), this!!.context!!);
-            Navigation.findNavController(it).popBackStack()
-        }
 
+            var validFlag = viewModel.checkSelectedDateValid(this.context,dateinputtext.text.toString(),daysinputtext.text.toString());
+
+            if(Integer.parseInt(validFlag)>-1) {
+                viewModel.updateNewPeriodDate(
+                    dateinputtext.text.toString(),
+                    daysinputtext.text.toString(),
+                    this!!.context!!
+                )
+                Navigation.findNavController(it).popBackStack()
+            } else {
+                Toast.makeText(this.context,"Please select a valid date,Input date error",Toast.LENGTH_LONG).show()
+            }
+         }
     }
 }
