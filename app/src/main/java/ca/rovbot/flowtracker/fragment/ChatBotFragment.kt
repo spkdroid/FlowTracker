@@ -27,11 +27,11 @@ class ChatBotFragment : Fragment(), View.OnClickListener {
 
         val myId = 0
         val myIcon = BitmapFactory.decodeResource(resources, R.drawable.ldroid)
-        val myName = "Michael"
+        val myName = "me"
 
         val yourId = 1
         val yourIcon = BitmapFactory.decodeResource(resources, R.drawable.ldroid)
-        val yourName = "Emily"
+        val yourName = "RovBot"
 
         val me = User(myId, myName, myIcon)
         val you = User(yourId, yourName, yourIcon)
@@ -45,18 +45,10 @@ class ChatBotFragment : Fragment(), View.OnClickListener {
         val receivedMessage = Message.Builder()
             .setUser(you)
             .setRight(false)
-            .setText(ChatBot.talk(me.getName(), message.toString()))
+            .setText(ChatBot.talk(me.getName(),"Hi, I am RovBot."))
             .build()
 
-       // val sendDelay = (Random().nextInt(4) + 1) * 1000;
-         chatView.receive(receivedMessage)
-   //        Handler().postDelayed({
-     //       @Override
-       //     fun run() {
-         //       chatView.receive(receivedMessage);
-         //   }
-       // }, sendDelay.toLong());
-
+        chatView.receive(receivedMessage)
 
     }
 
@@ -85,16 +77,16 @@ class ChatBotFragment : Fragment(), View.OnClickListener {
         chatView.setLeftBubbleColor(Color.WHITE);
         chatView.setBackgroundColor(ContextCompat.getColor(this.context!!, R.color.blueGray500));
         chatView.setSendButtonColor(ContextCompat.getColor(this.context!!, R.color.cyan900));
-        chatView.setSendIcon(R.drawable.ic_action_send);
+        chatView.setSendIcon(R.drawable.ic_action_send)
         chatView.setOnClickSendButtonListener(this)
         chatView.setRightMessageTextColor(Color.WHITE);
         chatView.setLeftMessageTextColor(Color.BLACK);
         chatView.setUsernameTextColor(Color.WHITE);
         chatView.setSendTimeTextColor(Color.WHITE);
         chatView.setDateSeparatorColor(Color.WHITE);
-        chatView.setInputTextHint("new message...");
+        chatView.setInputTextHint("new message...")
         chatView.setMessageMarginTop(5);
-        chatView.setMessageMarginBottom(5);
+        chatView.setMessageMarginBottom(5)
 
 
     }

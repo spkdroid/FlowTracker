@@ -71,7 +71,14 @@ class RegistrationFragment : Fragment() {
 
         submitregistration.setOnClickListener{
 
-            val validFlag = Integer.parseInt(viewModel.checkSelectedDateValid(view!!.context,dateinputtext.text.toString()));
+            var validFlag = 0
+
+            try {
+              validFlag = Integer.parseInt(viewModel.checkSelectedDateValid(view!!.context, dateinputtext.text.toString(),daysinputtext.text.toString()))
+            } catch (e:Exception){
+                validFlag = -2
+            }
+
             if(validFlag>-1) {
                 viewModel.registerUser(daysinputtext.text.toString(), dateinputtext.text.toString(), this.context!!)
 
@@ -82,7 +89,7 @@ class RegistrationFragment : Fragment() {
                 }
 
             } else {
-                Toast.makeText(view!!.context,"Please Pick a valid date",Toast.LENGTH_LONG).show()
+                Toast.makeText(view!!.context,"Please pick a valid date, Error in the date selected",Toast.LENGTH_LONG).show()
             }
         }
     }

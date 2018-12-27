@@ -22,7 +22,7 @@ class HubViewModel : ViewModel() {
         var currentDay: Date
         currentDay = formatter.parse(currentDate)
         val v = daysBetween(date,currentDay)
-        return v.toString();
+        return v.toString()
     }
 
     fun daysBetween(d1: Date, d2: Date): Long {

@@ -27,13 +27,13 @@ class RegistrationViewModel : ViewModel() {
                 "freq"
             ).toString().isNotEmpty()
         ) {
-            return true;
+            return true
         }
-        return false;
+        return false
     }
 
 
-    fun checkSelectedDateValid(context: Context?,selectedCalendarDate:String):String {
+    fun checkSelectedDateValid(context: Context?,selectedCalendarDate:String,selectedDayCount:String):String {
         val editor = context!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
         val formatter: DateFormat
         var date: Date
@@ -43,12 +43,17 @@ class RegistrationViewModel : ViewModel() {
         var currentDay: Date
         currentDay = formatter.parse(currentDate)
         val v = daysBetween(date,currentDay)
-        return v.toString();
+
+        if(v>Integer.parseInt(selectedDayCount) || v<0)
+            return "-1"
+
+
+        return v.toString()
     }
 
 
     fun daysBetween(d1: Date, d2: Date): Long {
-        return ((d2.time - d1.time) / (1000 * 60 * 60 * 24)) as Long
+        return ((d2.time - d1.time) / (1000 * 60 * 60 * 24))
     }
 
     // TODO: Implement the ViewModel

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import ca.rovbot.flowtracker.viewmodel.HubViewModel
 import ca.rovbot.flowtracker.R
@@ -57,7 +58,8 @@ class HubFragment : Fragment() {
         }
 
         rovbotdroid.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_chatBotFragment)
+         Toast.makeText(it.context,"Chat Support not enabled",Toast.LENGTH_LONG).show()
+         //   Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_chatBotFragment)
         }
 
 

@@ -28,7 +28,7 @@
             android:id="@+id/linearLayout" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="154dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/submitregistration">
         <TextView
-                android:text="Last Date Period"
+                android:text="Please input your last period date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/lastdateperiod" android:textStyle="bold"
                 android:textColor="@color/colorAccent"/>
@@ -53,10 +53,10 @@
         </LinearLayout>
 
         <TextView
-                android:text="Number of period days"
+                android:text="Average number of days between period"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/numberofdays"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorAccent" android:textStyle="bold"/>
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
         <EditText
                 android:layout_width="wrap_content"
