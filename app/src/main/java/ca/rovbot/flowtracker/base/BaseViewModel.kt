@@ -66,10 +66,10 @@ open class BaseViewModel: ViewModel() {
         val date = editor.getString("date","date").toString()
         val freq = editor.getString("freq","freq").toString()
 
-        if(date == "date" && freq == "freq") {
-            return true
+        if(date.equals("date") && freq.equals("freq")) {
+            return false
         }
-        return false
+        return true
     }
 
 

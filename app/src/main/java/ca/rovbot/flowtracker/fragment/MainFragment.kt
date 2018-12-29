@@ -35,10 +35,10 @@ class MainFragment : Fragment() {
          startbutton.setOnClickListener {
 
              if(viewModel.validateUser(this.context)) {
-                 Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_registrationFragment)
-             } else {
                  viewModel.checkIfCycleCompleted(context)
                  Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_hubFragment)
+             } else {
+                 Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_registrationFragment)
              }
          }
     }
