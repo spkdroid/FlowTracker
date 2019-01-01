@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity
-data class PeriodTable(
+data class PeriodLogTable(
     @PrimaryKey var uid: Int,
     @ColumnInfo(name = "title") var title: String?,
     @ColumnInfo(name = "type") var type: String?,
