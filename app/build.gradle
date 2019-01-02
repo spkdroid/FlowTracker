@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
 
     compileOptions {
@@ -45,4 +47,7 @@ dependencies {
     implementation 'com.applandeo:material-calendar-view:1.0.1'
     implementation 'com.github.bassaer:chatmessageview:1.11.2'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'android.arch.persistence.room:runtime:1.1.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.0'
+    kapt "android.arch.persistence.room:compiler:1.1.0"
 }

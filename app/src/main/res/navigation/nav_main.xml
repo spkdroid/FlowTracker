@@ -12,7 +12,6 @@
     </fragment>
     <fragment android:id="@+id/registrationFragment" android:name="ca.rovbot.flowtracker.fragment.RegistrationFragment"
               android:label="RegistrationFragment">
-        <action android:id="@+id/action_registrationFragment_to_hubFragment" app:destination="@id/hubFragment"/>
     </fragment>
     <fragment android:id="@+id/hubFragment" android:name="ca.rovbot.flowtracker.fragment.HubFragment"
               android:label="HubFragment">

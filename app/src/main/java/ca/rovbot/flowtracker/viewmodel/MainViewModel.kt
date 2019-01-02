@@ -3,24 +3,13 @@ package ca.rovbot.flowtracker.viewmodel
 import android.arch.lifecycle.ViewModel
 import android.content.Context
 import ca.rovbot.flowtracker.R
+import ca.rovbot.flowtracker.base.BaseViewModel
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainViewModel : ViewModel() {
+class MainViewModel : BaseViewModel() {
 
-    fun validateUser(it: Context?): Boolean {
-
-        val editor = it!!.getSharedPreferences(R.string.sharedpreferencename.toString(), Context.MODE_PRIVATE)
-
-        val date = editor.getString("date","date").toString()
-        val freq = editor.getString("freq","freq").toString()
-
-        if(date.equals("date") && freq.equals("freq")) {
-            return true;
-        }
-        return false;
-    }
 
     fun checkIfCycleCompleted(context: Context?) {
 
@@ -46,10 +35,4 @@ class MainViewModel : ViewModel() {
 
     }
 
-    fun daysBetween(d1: Date, d2: Date): Long {
-        return ((d2.time - d1.time) / (1000 * 60 * 60 * 24)) as Long
-    }
-
-
-    // TODO: Implement the ViewModel
 }

@@ -2,6 +2,7 @@ package ca.rovbot.flowtracker
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import ca.rovbot.flowtracker.repository.LogRepository
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +20,8 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
+        val LogRepository  = LogRepository(appContext)
+        assertNotNull(LogRepository)
         assertEquals("ca.rovbot.flowtracker", appContext.packageName)
     }
 }
