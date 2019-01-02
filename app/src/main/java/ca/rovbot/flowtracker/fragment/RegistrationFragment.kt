@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.registration_fragment.*
 import java.util.*
 
 
-
-
 class RegistrationFragment : Fragment() {
 
     companion object {
@@ -84,9 +82,8 @@ class RegistrationFragment : Fragment() {
 
                 if (viewModel.validateUser(view!!.context)) {
                     Navigation.findNavController(it).popBackStack()
-                    //  Navigation.findNavController(it).navigate(R.id.action_registrationFragment_to_hubFragment)
                 } else {
-                    Toast.makeText(view!!.context, "Registartion Failed", Toast.LENGTH_LONG).show()
+                    Toast.makeText(view!!.context, "Registration Failed", Toast.LENGTH_LONG).show()
                 }
 
             } else {

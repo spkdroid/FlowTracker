@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         navHost = supportFragmentManager
             .findFragmentById(R.id.navHost) as NavHostFragment
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navHost.navController.navigateUp() || super.onSupportNavigateUp()
     }
+
 
 }
