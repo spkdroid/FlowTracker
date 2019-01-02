@@ -12,7 +12,6 @@ import ca.rovbot.flowtracker.viewmodel.HubViewModel
 import ca.rovbot.flowtracker.R
 import kotlinx.android.synthetic.main.hub_fragment.*
 
-
 class HubFragment : Fragment() {
 
     companion object {
@@ -33,11 +32,11 @@ class HubFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(HubViewModel::class.java)
         // TODO: Use the ViewModel
 
+        val dayscount = viewModel.getDayCount(context)
+        val progresBarResult = viewModel.getCurrentProgress(dayscount,context)
 
-        dayscount.text = viewModel.getDayCount(context)
-        val progresBarResult = viewModel.getCurrentProgress(dayscount.text.toString(),context)
-
-        circularProgressBar.setProgressWithAnimation(progresBarResult,2000);
+        circularProgressBar.setPercentage((progresBarResult.toInt()*3.5).toInt())
+        circularProgressBar.setStepCountText(dayscount);
 
         if(progresBarResult<39){
             messagecontent.setText(R.string.lesswarningmessage)
@@ -52,17 +51,12 @@ class HubFragment : Fragment() {
         logperiod.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_logDateFragment)
         }
-
-        hubCalendar.setOnClickListener {
+        calendarbutton.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_calendarFragment)
         }
-
-        rovbotdroid.setOnClickListener {
+         chatbutton.setOnClickListener {
          Toast.makeText(it.context,"Chat Support not enabled",Toast.LENGTH_LONG).show()
          //   Navigation.findNavController(it).navigate(R.id.action_hubFragment_to_chatBotFragment)
         }
-
-
     }
-
 }

@@ -17,12 +17,9 @@
               android:label="HubFragment">
         <action android:id="@+id/action_hubFragment_to_calendarFragment" app:destination="@id/calendarFragment"/>
         <action android:id="@+id/action_hubFragment_to_logDateFragment" app:destination="@id/logDateFragment"/>
-        <action android:id="@+id/action_hubFragment_to_chatBotFragment" app:destination="@id/chatBotFragment"/>
     </fragment>
     <fragment android:id="@+id/calendarFragment" android:name="ca.rovbot.flowtracker.fragment.CalendarFragment"
               android:label="calendar_fragment" tools:layout="@layout/calendar_fragment"/>
     <fragment android:id="@+id/logDateFragment" android:name="ca.rovbot.flowtracker.fragment.LogDateFragment"
               android:label="log_date_fragment" tools:layout="@layout/log_date_fragment"/>
-    <fragment android:id="@+id/chatBotFragment" android:name="ca.rovbot.flowtracker.fragment.ChatBotFragment"
-              android:label="chat_bot_fragment" tools:layout="@layout/chat_bot_fragment"/>
 </navigation>
