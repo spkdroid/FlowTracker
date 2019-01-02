@@ -6,10 +6,10 @@ import ca.rovbot.flowtracker.model.PeriodLogTable
 import ca.rovbot.flowtracker.repository.database.LogDatabase
 
 
-class SongRepository(private val applicationContext: Context) {
+class LogRepository(private val applicationContext: Context) {
     private var database: LogDatabase? = null
 
-    val allSongs: List<PeriodLogTable>
+    val allLogs: List<PeriodLogTable>
         get() = database!!.logDaoAccess.fetchAll()
 
     init {
@@ -23,11 +23,11 @@ class SongRepository(private val applicationContext: Context) {
             .build()
     }
 
-    fun addSong(logToBeAdded: PeriodLogTable) {
+    fun addLog(logToBeAdded: PeriodLogTable) {
         database!!.logDaoAccess.insertSingleSong(logToBeAdded)
     }
 
-    fun deleteSong(logToBeDeleted: PeriodLogTable) {
+    fun deleteLog(logToBeDeleted: PeriodLogTable) {
         database!!.logDaoAccess.deleteLog(logToBeDeleted)
     }
 
@@ -35,7 +35,7 @@ class SongRepository(private val applicationContext: Context) {
         database!!.logDaoAccess.clearTable()
     }
 
-    fun getSongById(Id: Int): PeriodLogTable {
+    fun getLogById(Id: Int): PeriodLogTable {
         return database!!.logDaoAccess.fetchLogByID(Id)
     }
 }
