@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import ca.rovbot.flowtracker.viewmodel.CalendarViewModel
 import ca.rovbot.flowtracker.R
-import com.applandeo.materialcalendarview.EventDay
 import kotlinx.android.synthetic.main.calendar_fragment.*
 
 
