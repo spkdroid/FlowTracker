@@ -3,24 +3,15 @@
 A simple feminine menstrual cycle calendar.
 
 
-**Android Studio 3.6 required**
+**Android Studio required**
 
 * Clone or download the repo
 * Import project and build
 
-## Getting Started
-
-The apk file can be downloaded from the following link <br>
-
-<strong>
-<a href="https://www.spkdroid.com/c51/app-release.apk">Download Now!!</a>
-</strong>
-
-
 ## Authors
 
 * **Ramkumar Velmurugan** - <a href="http://www.spkdroid.com/CV/">Portfolio</a>
-* **JeyaBalaji Samuthiravelu - <a href="https://www.linkedin.com/in/jeyabalajis/">Profile</a>
+* **JeyaBalaji Samuthiravelu** - <a href="https://www.linkedin.com/in/jeyabalajis/">Profile</a>
 
 ### License
     Copyright 2018 Ramkumar Velmurugan
