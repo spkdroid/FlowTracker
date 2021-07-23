@@ -1,7 +1,5 @@
 # Flowtracker
 
-Flowtracker
-
 A simple feminine menstrual cycle calendar.
 
 
